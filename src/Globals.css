@@ -8,7 +8,7 @@
     }
 }
 body {
-    background-image: url("../../../public/images/wikihowPC.jpg");
+    background-image: url("/images/wikihowPC.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

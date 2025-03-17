@@ -6,20 +6,20 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.logo}>
-                <img src="../../../public/images/DevSolutionsBlackSemFundo.png" alt="" />
+                <img src="/images/DevSolutionsBlackSemFundo.png" alt="" />
             </div>
             <div className={style.links}>
                 <Link to="/">
-                    <img src="../../../public/icons/homeIcon.svg" alt="" />Início
+                    <img src="/icons/homeIcon.svg" alt="" />Início
                 </Link>
                 <Link to="/services">
-                    <img src="../../../public/icons/servicesIcon.svg" alt="" />Serviços
+                    <img src="/icons/servicesIcon.svg" alt="" />Serviços
                 </Link>
                 <Link to="/projects">
-                    <img src="../../../public/icons/projectsIcon.svg" alt="" />Projetos
+                    <img src="/icons/projectsIcon.svg" alt="" />Projetos
                 </Link>
                 <Link to="/aboutus">
-                    <img src="../../../public/icons/aboutusIcon.svg" alt="" />Sobre nós
+                    <img src="/icons/aboutusIcon.svg" alt="" />Sobre nós
                 </Link>
             </div>
         </div>

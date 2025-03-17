@@ -16,26 +16,26 @@ const Home = () => {
                             </a>
                             <div className={style.icons}>
                                 <a href="">
-                                    <img src="/public/instagramIcon.png" alt="" />
+                                    <img src="/instagramIcon.png" alt="" />
                                 </a>
                                 <a href="">
-                                    <img src="/public/linkedinIcon.png" alt="" />   
+                                    <img src="/linkedinIcon.png" alt="" />   
                                 </a>
                                 <a href="">
-                                    <img src="/public/whatsappIcon.png" alt="" />   
+                                    <img src="/whatsappIcon.png" alt="" />   
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div className={style.rightside}>
-                        <img src="../../../public/images/DevSolutionsFilter.png" alt="" />
+                        <img src="/images/DevSolutionsFilter.png" alt="" />
                     </div>
                 </div>
                 <div className={style.cards}>
-                    <CardService image="../../../public/icons/cardIon/devIcon.svg" title="Desenvolvimento" content="" link='/services' />
-                    <CardService image="../../../public/icons/cardIon/penIcon.svg" title="Marketing e Design" content="" link='/services'/>
-                    <CardService image="../../../public/icons/cardIon/ideiaIcon.svg" title="Consultoria e solução" content="" link='/services'/>
-                    <CardService image="../../../public/icons/cardIon/suporteIcon.svg" title="Suporte e Hardware" content="" link='/services'/>
+                    <CardService image="/icons/cardIon/devIcon.svg" title="Desenvolvimento" content="" link='/services' />
+                    <CardService image="/icons/cardIon/penIcon.svg" title="Marketing e Design" content="" link='/services'/>
+                    <CardService image="/icons/cardIon/ideiaIcon.svg" title="Consultoria e solução" content="" link='/services'/>
+                    <CardService image="/icons/cardIon/suporteIcon.svg" title="Suporte e Hardware" content="" link='/services'/>
                 </div>
             </div>
         </PageTransition>
