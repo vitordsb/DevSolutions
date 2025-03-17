@@ -1,0 +1,87 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    color: white;
+    padding: 40px;
+    position: relative;
+
+}
+.banner {
+    display: flex;
+    padding: 20px 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+.divisor {
+    width: 60%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #3d3d3d;
+}
+.leftside {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 22px;
+    gap: 30px;
+    text-align: start;
+}
+.rightside {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 70%;
+    }
+}
+.seo {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.icons {
+    display: flex;
+    gap: 20px;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+    }
+    img {
+        width: 50px;
+    }
+}
+
+.button {
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: calc(.3s);
+    cursor: pointer;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 30px;
+    &:hover {
+        background-color: var(--buttonbg);
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,60 @@
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: scale(1.025);
+}
+
+.icon {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+    text-align: justify;
+  color: #666;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Botão "Saiba mais" */
+.detailsButton {
+  display: flex;
+    align-items: center;
+    gap: 10px;
+  background-color: var(--buttonbg);
+  padding: 10px 30px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  p {
+    margin: 0; 
+  font-weight: 600;
+    color: #000000;
+  }
+  img {
+    width: 30px;
+    height: auto;
+    margin-right: 5px;
+  }
+}
+
+.detailsButton:hover {
+  background-color: #fcd824;
+}

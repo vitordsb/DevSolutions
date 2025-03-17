@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    a {
+        text-decoration: none;
+    }
+}
+body {
+    background-image: url("../../../public/images/wikihowPC.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+:root {
+    --primarybg: #1C5A90;
+    --buttonbg: #FAF064;
+    --primaryhover: #6BC6FF;
+}
