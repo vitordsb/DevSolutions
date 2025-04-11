@@ -1,7 +1,9 @@
+import "./Aboutus.module.css"
+
 const Aboutus = () => {
   return (
-    <div>
-      oi
+    <div className='Container'>
+      <h1>Olá essa é a pagina de serviços</h1>
     </div>
   )
 }

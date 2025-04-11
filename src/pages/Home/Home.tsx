@@ -8,7 +8,7 @@ const Home = () => {
             <div className={style.home}>
                 <div className={style.banner}>
                     <div className={style.leftside}>
-                        <h1>Se está procurando uma solução eficiente, funcional e tecnológica para a sua empresa?</h1>
+                        <h1>Está procurando uma solução eficiente, funcional e tecnológica para a sua empresa?</h1>
                         <p>A DevSolutions pode te ajudar, entre em contato agora para resolver seus problemas!</p>
                         <div className={style.seo}>
                             <a href="#" className={style.button}>
