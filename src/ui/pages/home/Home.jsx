@@ -4,6 +4,7 @@ import { useTheme } from '../../../context/ThemeContext'
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../context/LanguageContext';
 import { FaArrowRight } from 'react-icons/fa';
+
 const phrases = [
     "Software",
     "Apps Mobile",
@@ -12,7 +13,7 @@ const phrases = [
 
 const Home = () => {
     const { theme } = useTheme(); 
-    const logoSrc = theme === "dark" ? "../../../public/images/DDarkSemFundo.png" : "../../../public/images/D.png";
+    const logoSrc = theme === "dark" ? "/images/DDarkSemFundo.png" : "/images/D.png";
     const {language}  = useLanguage();
 
     const [text, setText] = useState('');
@@ -27,10 +28,10 @@ const Home = () => {
         isDeleting ? current.substring(0, prev.length - 1) : current.substring(0, prev.length + 1)
       );
 
-      setSpeed(isDeleting ? 50 : 100); // faster deleting
+      setSpeed(isDeleting ? 50 : 100); 
 
       if (!isDeleting && text === current) {
-        setTimeout(() => setIsDeleting(true), 1500); // pause before deleting
+        setTimeout(() => setIsDeleting(true), 1500); 
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
         setIndex(prev => prev + 1);

@@ -10,7 +10,7 @@ import { IoIosBusiness } from "react-icons/io";
 
 const SideBar = () => {
     const { theme } = useTheme();
-    const logoSrc = theme === "dark" ? "../../../public/images/DDarkSemFundo.png" : "../../../public/images/D.png";
+    const logoSrc = theme === "dark" ? "/images/DDarkSemFundo.png" : "/images/D.png";
     
     const {language}  = useLanguage();
     return (
