@@ -7,11 +7,10 @@ import { useLanguage } from "../../context/LanguageContext"
 import { BsFillPeopleFill } from "react-icons/bs";
 import { useTheme } from "../../context/ThemeContext"
 import { IoIosBusiness } from "react-icons/io";
-import { FaHandshakeSimple } from "react-icons/fa6";
 
 const SideBar = () => {
     const { theme } = useTheme();
-    const logoSrc = theme === "dark" ? "/public/images/DDarkSemFundo.png" : "/public/images/D.png";
+    const logoSrc = theme === "dark" ? "../../../public/images/DDarkSemFundo.png" : "../../../public/images/D.png";
     
     const {language}  = useLanguage();
     return (
