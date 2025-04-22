@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Container, RightSide, LeftSide, LeftBox, Buttons, Button, NewsLetter } from './Home'
+import { Container, RightSide, LeftSide, LeftBox, Buttons, Button, NewsLetter } from './styles'
 import { useTheme } from '../../../context/ThemeContext'
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../../context/LanguageContext';
@@ -56,7 +56,7 @@ const Home = () => {
                                 <FaArrowRight/>
                             </Button>
                         </Link>
-                        <Link to="/consultant">
+                        <Link to="/consulting">
                             <Button>
                                 {language === 'pt' ? 'Schedule consultation' : 'Agendar consultoria'}
                                 <FaArrowRight/>
@@ -76,7 +76,7 @@ const Home = () => {
             </LeftSide>
             <RightSide>
                     <img src={logoSrc} alt="" />
-                    <p>Venha fazer parte do nosso time</p>
+                    <p>{language === 'pt' ? 'Come join in our team' : 'Venha fazer parte da nossa equipe'}</p>
             </RightSide>
         </Container>
     )

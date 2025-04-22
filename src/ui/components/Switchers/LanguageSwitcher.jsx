@@ -1,4 +1,4 @@
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../../context/LanguageContext';
 import { GiBrazilFlag, GiUsaFlag } from "react-icons/gi";
 import styled from 'styled-components';
 

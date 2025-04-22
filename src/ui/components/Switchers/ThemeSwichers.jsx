@@ -1,7 +1,7 @@
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../../context/ThemeContext';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import styled from 'styled-components';
-import { useLanguage } from '../../context/LanguageContext';
+import { useLanguage } from '../../../context/LanguageContext';
 
 const StyledFaSun = styled(FaSun)`
     color: white;

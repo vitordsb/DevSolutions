@@ -46,6 +46,7 @@ export const RightSide = styled.div`
     justify-content: center;
     gap: 10px;
     p {
+        color: var(--text-color);
         font-size: 20px;
         font-weight: bolder;
     }
@@ -75,7 +76,7 @@ export const Button = styled.button`
     &:hover {
       background-color: var(--hover-color) !important;
       transform: scale(1.025);
-      color: var(--text-color);
+      color: white;
     }
 `
 

@@ -5,12 +5,18 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./ui/pages/home/Home.jsx";
+import Services from "./ui/pages/services/Services.jsx";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
-import SideBar from "./components/SideBar/SideBar.jsx";
+import SideBar from "/src/ui/components/SideBar/SideBar.jsx";
 import styled from "styled-components";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+import ServiceDevelopment from "./ui/pages/services/MoreService/ServiceDevelopment";
+import Aboutus from "./ui/pages/aboutus/Aboutus.jsx";
+import Consulting from "./ui/pages/consulting/Consulting.jsx";
+import ServiceUI from "./ui/pages/services/MoreService/ServiceUI";
+import NotFound from "./NotFound.jsx";
 
 const AppContainer = styled.div`
   display: flex;
@@ -21,12 +27,13 @@ const Content = styled.main`
   flex: 1;
   background-color: var(--bg-color);
   overflow-y: hidden;
+  overflow-x: hidden;
 `;
 
 const pageTransition = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
+  initial: { opacity: 0, x: 20 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -20 },
   transition: { duration: 0.2 },
 };
 
@@ -45,7 +52,13 @@ function AnimatedRoutes() {
         style={{ height: "100%" }}
       >
         <Routes location={location}>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
+          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/consulting" element={<Consulting />} />
+          <Route path="/service/development" element={<ServiceDevelopment />} />
+          <Route path="/service/designer" element={<ServiceUI />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

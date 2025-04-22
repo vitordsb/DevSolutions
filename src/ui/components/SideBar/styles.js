@@ -31,17 +31,6 @@ export const Title = styled.div`
         width: 150px;
     }
 `  
-export const Partner = styled.div`
-    padding: 12px;
-    align-items: center;
-    border-radius: 10px;
-    background-color: var(--second-color);
-    display: flex;
-    gap: 10px;
-    color: var(--text-color);
-    display: flex;
-    font-weight: bold;
-`
 export const Links = styled.div`
     display: flex;
     flex-direction: column;
