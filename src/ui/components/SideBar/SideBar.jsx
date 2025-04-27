@@ -1,60 +1,94 @@
-import LanguageSwitcher from "../Switchers/LanguageSwitcher"
-import { Container, Links, Title, Side, Hooks } from "./styles"
-import { Link } from "react-router-dom"
-import ThemeSwitcher from "../Switchers/ThemeSwichers"
-import { FaHome, FaCode } from "react-icons/fa"
-import { useLanguage } from "../../../context/LanguageContext"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaHome, FaCode, FaNewspaper } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { useTheme } from "../../../context/ThemeContext"
-import { FaNewspaper } from "react-icons/fa";
 import { IoIosBusiness } from "react-icons/io";
+import LanguageSwitcher from "../Switchers/LanguageSwitcher";
+import ThemeSwitcher from "../Switchers/ThemeSwichers";
+import {
+  Sidebar,
+  HamburgerButton,
+  MobileDrawer,
+  SideContent,
+  Title as SidebarTitle,
+  Links,
+  Hooks,
+} from "./styles";
+import { useLanguage } from "../../../context/LanguageContext";
+import { useTheme } from "../../../context/ThemeContext";
 
-const SideBar = () => {
-    const { theme } = useTheme();
-    const logoSrc = theme === "dark" ? "/images/DDarkSemFundo.png" : "/images/D.png";
-    
-    const {language}  = useLanguage();
-    return (
-        <Container>
-            <Title>
-                <Link to="/">
-                    <img src={logoSrc} alt="" />
-                </Link>
-            <Side>
-                <Links>
-                    <Link to="/">
-                        <FaHome />
-                        <p>{language === 'pt' ? 'Home' : 'Início'}</p>
-                    </Link>
-                    <Link to="/services">
-                        <FaCode />
-                        <p>{language === 'pt' ? 'Services' : 'Serviços'}</p>
-                    </Link>
-                    <Link to="/aboutus">
-                        <FaHome />
-                        <p>{language === 'pt' ? 'About us' : 'Sobre nós'}</p>
-                    </Link>
-                    <Link to="/experience">
-                        <IoIosBusiness />
-                        <p>{language === 'pt' ? 'Experiences' : 'Experiências'}</p>
-                    </Link>
-                    <Link to="/consulting">
-                        <BsFillPeopleFill />
-                        <p>{language === 'pt' ? 'Consultancy' : 'Consultoria'}</p>
-                    </Link>
-                    <Link to="/newsletter">
-                        <FaNewspaper />
-                        <p>{language === 'pt' ? 'Newsletter' : 'Novidades'}</p>
-                    </Link>
-            </Links>
-            </Side>
-            </Title>
-            <Hooks>
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-            </Hooks>
-        </Container>
-    )
+export default function SideBar() {
+  const { theme } = useTheme();
+  const { language } = useLanguage();
+  const logoSrc = theme === "dark"
+    ? "/images/DevSolutionsAlternate.png"
+    : "/images/DevSolutions.png";
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDrawer = () => setIsOpen(prev => !prev);
+
+  const menuItems = [
+    { to: "/", icon: <FaHome />, label: language === 'pt' ? 'Início' : 'Home' },
+    { to: "/services", icon: <FaCode />, label: language === 'pt' ? 'Serviços' : 'Services' },
+    { to: "/aboutus", icon: <FaHome />, label: language === 'pt' ? 'Sobre nós' : 'About us' },
+    { to: "/experience", icon: <IoIosBusiness />, label: language === 'pt' ? 'Experiências' : 'Experiences' },
+    { to: "/consulting", icon: <BsFillPeopleFill />, label: language === 'pt' ? 'Consultoria' : 'Consultancy' },
+    { to: "/newsletter", icon: <FaNewspaper />, label: language === 'pt' ? 'Novidades' : 'Newsletter' },
+  ];
+
+  return (
+    <>
+      <HamburgerButton onClick={toggleDrawer}>
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </HamburgerButton>
+
+      <Sidebar>
+        <SideContent>
+          <SidebarTitle>
+            <Link to="/">
+              <img src={logoSrc} alt="DevSolutions Logo" />
+            </Link>
+          </SidebarTitle>
+
+          <Links>
+            {menuItems.map(item => (
+              <Link key={item.to} to={item.to} onClick={() => setIsOpen(false)}>
+                {item.icon}
+                <p>{item.label}</p>
+              </Link>
+            ))}
+          </Links>
+        </SideContent>
+
+        <Hooks>
+          <LanguageSwitcher />
+          <ThemeSwitcher />
+        </Hooks>
+      </Sidebar>
+
+      <MobileDrawer isOpen={isOpen}>
+        <SideContent>
+          <SidebarTitle>
+            <Link to="/">
+              <img src={logoSrc} alt="DevSolutions Logo" />
+            </Link>
+          </SidebarTitle>
+
+          <Links>
+            {menuItems.map(item => (
+              <Link key={item.to} to={item.to} onClick={toggleDrawer}>
+                {item.icon}
+                <p>{item.label}</p>
+              </Link>
+            ))}
+          </Links>
+
+          <Hooks>
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </Hooks>
+        </SideContent>
+      </MobileDrawer>
+    </>
+  );
 }
-
-export default SideBar

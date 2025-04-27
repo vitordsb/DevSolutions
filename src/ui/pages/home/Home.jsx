@@ -13,7 +13,7 @@ const phrases = [
 
 const Home = () => {
     const { theme } = useTheme(); 
-    const logoSrc = theme === "dark" ? "/images/DDarkSemFundo.png" : "/images/D.png";
+    const logoSrc = theme === "dark" ? "/images/DevSolutionsAlternade.png" : "/images/DevSolutions.png";
     const {language}  = useLanguage();
 
     const [text, setText] = useState('');
