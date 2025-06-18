@@ -14,6 +14,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import ServiceDevelopment from "./ui/pages/services/MoreService/ServiceDevelopment";
 import Aboutus from "./ui/pages/aboutus/Aboutus.jsx";
+import Experience from "./ui/pages/experience/Experience.jsx";
 import Consulting from "./ui/pages/consulting/Consulting.jsx";
 import ServiceUI from "./ui/pages/services/MoreService/ServiceUI";
 import NotFound from "./NotFound.jsx";
@@ -26,7 +27,6 @@ const AppContainer = styled.div`
 const Content = styled.main`
   flex: 1;
   background-color: var(--bg-color);
-  overflow-y: hidden;
   overflow-x: hidden;
 `;
 
@@ -57,6 +57,7 @@ function AnimatedRoutes() {
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/services" element={<Services />} />
           <Route path="/consulting" element={<Consulting />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/service/development" element={<ServiceDevelopment />} />
           <Route path="/service/designer" element={<ServiceUI />} />
         </Routes>

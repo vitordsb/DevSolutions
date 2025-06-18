@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100%;
+    height: 100vh;
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
@@ -9,7 +9,7 @@ export const Container = styled.div`
     width: 100%;
     background-color: var(--bg-color);
     img {
-        width: 700px;
+        width: 600px;
         height: auto;
     }
 `;
@@ -24,9 +24,8 @@ export const Wrapper = styled.div`
 export const Card = styled.div`
   background: var(--box-color);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;
   width: 100%;
-  max-width: 840px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 `;
 

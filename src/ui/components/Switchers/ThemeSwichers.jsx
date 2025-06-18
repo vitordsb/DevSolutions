@@ -3,6 +3,16 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import styled from 'styled-components';
 import { useLanguage } from '../../../context/LanguageContext';
 
+export default function ThemeSwitcher (){
+  const {language} = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <Button onClick={toggleTheme}>
+      {theme === 'dark' ? <StyledFaSun /> : <StyledFaMoon />}
+      {language === 'pt' ? "Theme" : "Tema"}
+    </Button>
+  );
+};
 const StyledFaSun = styled(FaSun)`
     color: white;
     font-size: 25px;
@@ -32,14 +42,4 @@ const Button = styled.button`
   }
 `
 
-export default function ThemeSwitcher (){
-  const {language} = useLanguage();
-  const { theme, toggleTheme } = useTheme();
-  return (
-    <Button onClick={toggleTheme}>
-      {theme === 'dark' ? <StyledFaSun /> : <StyledFaMoon />}
-      {language === 'pt' ? "Theme" : "Tema"}
-    </Button>
-  );
-};
 

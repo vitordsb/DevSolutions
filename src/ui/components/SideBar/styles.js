@@ -11,13 +11,11 @@ const breakpoints = {
 export const Sidebar = styled.div`
   background-color: var(--menuBar-color);
   position: sticky;
-  top: 0;
   height: 100vh;
   width: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${breakpoints.md}) {
@@ -87,6 +85,7 @@ export const Title = styled.div`
 export const Links = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 20px;
   gap: 20px;
   width: 100%;
 
@@ -108,6 +107,8 @@ export const Links = styled.div`
 
 export const Hooks = styled.div`
   display: flex;
+  align-items: center;
+  width: 100%;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 20px;

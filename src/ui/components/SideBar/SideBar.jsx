@@ -28,12 +28,12 @@ export default function SideBar() {
   const toggleDrawer = () => setIsOpen(prev => !prev);
 
   const menuItems = [
-    { to: "/", icon: <FaHome />, label: language === 'pt' ? 'Início' : 'Home' },
-    { to: "/services", icon: <FaCode />, label: language === 'pt' ? 'Serviços' : 'Services' },
-    { to: "/aboutus", icon: <FaHome />, label: language === 'pt' ? 'Sobre nós' : 'About us' },
-    { to: "/experience", icon: <IoIosBusiness />, label: language === 'pt' ? 'Experiências' : 'Experiences' },
-    { to: "/consulting", icon: <BsFillPeopleFill />, label: language === 'pt' ? 'Consultoria' : 'Consultancy' },
-    { to: "/newsletter", icon: <FaNewspaper />, label: language === 'pt' ? 'Novidades' : 'Newsletter' },
+    { to: "/", icon: <FaHome />, label: language === 'en' ? 'Início' : 'Home' },
+    { to: "/services", icon: <FaCode />, label: language === 'en' ? 'Serviços' : 'Services' },
+    { to: "/aboutus", icon: <FaHome />, label: language === 'en' ? 'Sobre nós' : 'About us' },
+    { to: "/experience", icon: <IoIosBusiness />, label: language === 'en' ? 'Experiências' : 'Experiences' },
+    { to: "/consulting", icon: <BsFillPeopleFill />, label: language === 'en' ? 'Consultoria' : 'Consultancy' },
+    { to: "/newsletter", icon: <FaNewspaper />, label: language === 'en' ? 'Novidades' : 'Newsletter' },
   ];
 
   return (
@@ -44,11 +44,6 @@ export default function SideBar() {
 
       <Sidebar>
         <SideContent>
-          <SidebarTitle>
-            <Link to="/">
-              <img src={logoSrc} alt="DevSolutions Logo" />
-            </Link>
-          </SidebarTitle>
 
           <Links>
             {menuItems.map(item => (

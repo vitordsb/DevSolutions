@@ -2,6 +2,16 @@ import { useLanguage } from '../../../context/LanguageContext';
 import { GiBrazilFlag, GiUsaFlag } from "react-icons/gi";
 import styled from 'styled-components';
 
+export default function LanguageSwitcher() {
+  const { language, toggleLanguage } = useLanguage();
+
+  return (
+    <Button onClick={toggleLanguage}>
+      {language === 'pt' ? <StyledGiBrazilFlag /> : <StyledGiUsaFlag />}
+      {language === 'pt' ? "PT-BR" : "EN-US"}
+    </Button>
+  );
+};
 const StyledGiBrazilFlag = styled(GiBrazilFlag)`
   color: #f6f601;
   background-color: #03b600;
@@ -36,14 +46,4 @@ const Button = styled.button`
   }
 `;  
 
-export default function LanguageSwitcher() {
-  const { language, toggleLanguage } = useLanguage();
-
-  return (
-    <Button onClick={toggleLanguage}>
-      {language === 'pt' ? <StyledGiBrazilFlag /> : <StyledGiUsaFlag />}
-      {language === 'pt' ? "PT-BR" : "EN-US"}
-    </Button>
-  );
-};
 
