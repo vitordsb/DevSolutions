@@ -199,60 +199,66 @@ const Experience = () => {
 
   const projects = [
     {
-      title: language === 'pt' ? 'Sistema de Gestão Empresarial' : 'Business Management System',
-      description: language === 'pt' 
+      img: '../../../../public/images/Dev.png',
+      title: language === 'en' ? 'Sistema de Gestão Empresarial' : 'Business Management System',
+      description: language === 'en' 
         ? 'Sistema completo de gestão empresarial com módulos de vendas, estoque, financeiro e relatórios avançados. Desenvolvido para uma empresa de médio porte com mais de 200 funcionários.'
         : 'Complete business management system with sales, inventory, financial and advanced reporting modules. Developed for a medium-sized company with over 200 employees.',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
+      tech: ['React', 'Node.js', 'MongoDB'],
       year: '2024',
-      team: '5 pessoas',
-      duration: '8 meses'
+      team: '3 pessoas',
+      duration: '3 meses'
     },
     {
-      title: language === 'pt' ? 'Aplicativo de Delivery' : 'Delivery App',
-      description: language === 'pt'
+      img: '../../../../public/images/Dev.png',
+      title: language === 'en' ? 'Aplicativo de Delivery' : 'Delivery App',
+      description: language === 'en'
         ? 'Aplicativo mobile para delivery de comida com sistema de pagamento integrado, rastreamento em tempo real e painel administrativo para restaurantes.'
         : 'Mobile food delivery app with integrated payment system, real-time tracking and administrative panel for restaurants.',
-      tech: ['React Native', 'Firebase', 'Stripe', 'Google Maps'],
-      year: '2024',
-      team: '4 pessoas',
-      duration: '6 meses'
-    },
-    {
-      title: language === 'pt' ? 'Plataforma de E-learning' : 'E-learning Platform',
-      description: language === 'pt'
-        ? 'Plataforma educacional online com sistema de videoaulas, exercícios interativos, certificados digitais e acompanhamento de progresso dos alunos.'
-        : 'Online educational platform with video lessons system, interactive exercises, digital certificates and student progress tracking.',
-      tech: ['Vue.js', 'Laravel', 'MySQL', 'AWS'],
+      tech: ['React Native', 'Firebase', 'Node'],
       year: '2023',
-      team: '6 pessoas',
+      team: '3 pessoas',
       duration: '10 meses'
     },
     {
-      title: language === 'pt' ? 'Sistema de IoT Industrial' : 'Industrial IoT System',
-      description: language === 'pt'
+      img: '../../../../public/images/Dev.png',
+      title: language === 'en' ? 'SaaS de freelancers' : 'Freelancers SaaS',
+      description: language === 'en'
+        ? 'Plataforma educacional online com sistema de videoaulas, exercícios interativos, certificados digitais e acompanhamento de progresso dos alunos.'
+        : 'Online educational platform with video lessons system, interactive exercises, digital certificates and student progress tracking.',
+      tech: ['Next', 'Node', 'MySQL', 'AWS'],
+      year: '2023',
+      team: '2 pessoas',
+      duration: '6 meses'
+    },
+    {
+      img: '../../../../public/images/Dev.png',
+      title: language === 'en' ? 'Grupo EGP' : 'Grupo EGP ',
+      description: language === 'en'
         ? 'Sistema de monitoramento industrial com sensores IoT, dashboard em tempo real e alertas automáticos para otimização de processos produtivos.'
         : 'Industrial monitoring system with IoT sensors, real-time dashboard and automatic alerts for production process optimization.',
-      tech: ['Python', 'MQTT', 'InfluxDB', 'Grafana'],
-      year: '2023',
-      team: '3 pessoas',
-      duration: '12 meses'
+      tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+      year: '2022',
+      team: '1 pessoa',
+      duration: '2 meses',
+      repository: 'https://github.com/vitordsb/GrupoEGP',
+      link: 'https://grupoegp.com.br'
     }
   ];
 
   const stats = [
-    { number: '50+', label: language === 'pt' ? 'Projetos Concluídos' : 'Completed Projects' },
-    { number: '30+', label: language === 'pt' ? 'Clientes Satisfeitos' : 'Satisfied Clients' },
-    { number: '5+', label: language === 'pt' ? 'Anos de Experiência' : 'Years of Experience' },
-    { number: '100%', label: language === 'pt' ? 'Taxa de Sucesso' : 'Success Rate' }
+    { number: '20+', label: language === 'en' ? 'Projetos Concluídos' : 'Completed Projects' },
+    { number: '30+', label: language === 'en' ? 'Clientes Satisfeitos' : 'Satisfied Clients' },
+    { number: '2+', label: language === 'en' ? 'Anos de Experiência' : 'Years of Experience' },
+    { number: '99%', label: language === 'en' ? 'Taxa de Sucesso' : 'Success Rate' }
   ];
 
   return (
     <Container>
       <Header>
-        <h1>{language === 'pt' ? 'Nossas Experiências' : 'Our Experiences'}</h1>
+        <h1>{language === 'en' ? 'Nossas Maiores experiências' : 'Our biggest experiences'}</h1>
         <p>
-          {language === 'pt'
+          {language === 'en'
             ? 'Conheça alguns dos projetos que desenvolvemos e os resultados que alcançamos para nossos clientes.'
             : 'Learn about some of the projects we have developed and the results we have achieved for our clients.'
           }
@@ -272,7 +278,7 @@ const Experience = () => {
         {projects.map((project, index) => (
           <ProjectCard key={index} className="fade-in">
             <ProjectImage>
-              {project.title.charAt(0)}
+              <img src={project.img} alt={project.title} />
             </ProjectImage>
             <ProjectTitle>{project.title}</ProjectTitle>
             <ProjectDescription>{project.description}</ProjectDescription>
@@ -296,13 +302,13 @@ const Experience = () => {
               ))}
             </TechStack>
             <ProjectLinks>
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href={project.link} onClick={(e) => e.preventDefault()}>
                 <FaExternalLinkAlt />
-                {language === 'pt' ? 'Ver Projeto' : 'View Project'}
+                {language === 'en' ? 'Ver Projeto' : 'View Project'}
               </a>
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href={project.repository} onClick={(e) => e.preventDefault()}>
                 <FaGithub />
-                {language === 'pt' ? 'Código' : 'Code'}
+                {language === 'en' ? 'Código' : 'Code'}
               </a>
             </ProjectLinks>
           </ProjectCard>
